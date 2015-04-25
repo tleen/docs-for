@@ -8,7 +8,12 @@ module.exports = function(grunt){
     jshint : {
       all : {
 	files : {
-	  src : ['./package.json', './Gruntfile.js','./index.js','./test/index.js']
+	  src : [
+	    './package.json',
+	    './Gruntfile.js',
+	    './index.js',
+	    './bin/docs-for',
+	    './test/index.js']
 	},
 	options : {
 	  expr : true,

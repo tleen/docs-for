@@ -1,0 +1,42 @@
+#!/usr/bin/env node
+'use strict';
+
+var open = require('open'),
+pkg = require('../package.json'),
+program = require('commander');
+
+var moduleName;
+program
+  .version(pkg.version)
+  .description(pkg.description)
+//  .option('-b, --browser', 'Try to display docs in a web browser')
+  .arguments('<moduleName>')
+  .action(function(name){
+    moduleName = name;
+  })
+  .parse(process.argv);
+
+if(!moduleName){
+  console.error('Err! No module name provided');
+  program.outputHelp();
+  process.exit(1);
+}
+
+require('..')({ name : moduleName}, function(err, url){
+  if(err) console.error('Err!', err.message);
+
+  // if url is not http(s) open in command line?
+  open(url);
+});
+
+
+
+
+
+
+/*
+* Local Variables:
+* mode: Javascript
+* End:
+* // emacs hint to show this file as Javascript
+*/
