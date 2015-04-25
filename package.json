@@ -1,0 +1,32 @@
+{
+  "name": "docs-for",
+  "version": "0.0.0",
+  "description": "Find and display the docs for a package in your current node project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/grunt-cafe-mocha/node_modules/mocha/bin/mocha --ui bdd --require should --reporter spec test/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tleen/docs-for.git"
+  },
+  "keywords": [
+    "documentation",
+    "docs"
+  ],
+  "author": "Thomas Leen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tleen/docs-for/issues"
+  },
+  "homepage": "https://github.com/tleen/docs-for",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-cafe-mocha": "^0.1.13",
+    "grunt-contrib-jshint": "^0.11.2",
+    "should": "^6.0.1"
+  },
+  "dependencies": {
+    "minimist": "^1.1.1"
+  }
+}
