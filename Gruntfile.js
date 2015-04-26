@@ -13,6 +13,7 @@ module.exports = function(grunt){
 	    './Gruntfile.js',
 	    './index.js',
 	    './bin/docs-for',
+	    './examples/*.js',
 	    './test/index.js']
 	},
 	options : {
