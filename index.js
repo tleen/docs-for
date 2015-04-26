@@ -3,7 +3,7 @@
 /*
 * docs-for - find (and open in a browser) the docs for a module in your node project
 * @exports docs-for
-* @version v0.0.0
+* @version v0.0.1
 * @author Tom Leen <tl@thomasleen.com>
 * @link https://github.com/tleen/docs-for
 * @license MIT
