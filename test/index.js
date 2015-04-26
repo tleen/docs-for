@@ -46,7 +46,7 @@ describe('no name', function(){
 
 
 // error comes up from find lib
-describe.skip('no package.json', function(){
+describe('no package.json', function(){
   it('should error', function(done){
     var there = path.resolve(__dirname,'..','..');
     docs4({ name : 'whatever', from : there }, function(err, url){

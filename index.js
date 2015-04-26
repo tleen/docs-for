@@ -13,6 +13,8 @@ module.exports = function(options, callback){
     'from' : process.cwd()
   });
 
+  console.log(args);
+
   var name = args.name;
 
   if(_.isEmpty(name)) return callback(new Error('Name of module is required'));
@@ -22,7 +24,7 @@ module.exports = function(options, callback){
   find.file('package.json', args.from, function(err, found){
 
     if(err) return callback(err);
-    if(err) return callback(new Error('Unable to find "package.json"'));
+    if(_.isNull(found)) return callback(new Error('Unable to find "package.json"'));
 
     fs.readJson(found, function(err, pkg){
       if(err) return callback(err);
