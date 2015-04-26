@@ -11,11 +11,11 @@ Because of the naming conventions of modules the *best module name match* is (in
 
 ## Usage
 
-## Command Line
+### Command Line
 
 This module loads two executables *docs-for* and the alias *docs4*. These will try to load the docs for a package in your current node project if you are anywhere in the project hierarchy.
 
-## example
+#### Example
 
 ```sh
 docs4 lodash
@@ -26,9 +26,14 @@ docs4 comm
 ```
 
 
-# Module
+## Module
 
-Find the closest thing to a documentation url for a module in a local node project.
+Find the closest thing to a documentation url for a module in a local node project. Accepts a string for the module name or a configuration object, with:
+
+* name - the name or partial name of the module
+* from - the directory from which to start the search for the module, defaults to the current process directory
+
+### Example
 
 ```javascript
 var docs4 = require('docs-for');
