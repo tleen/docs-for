@@ -5,7 +5,7 @@
 
 This node module is a response to a common need I found when developing node projects: needing to see the documentation of the other modules I was using. This was usually a multi-step process: open a browser, search for the module and find its homepage. **docs-for** tries to make it go faster.
 
-**docs-for** accepts a string input and will search upwards in the directory structure for a [package.json](https://docs.npmjs.com/files/package.json) file. It will then look for the best module name match for the name given, find that modules package, use it to locate the most likely location for documentation and try to open it in a web browser.
+**docs-for** accepts a string input and will search upwards in the directory structure for a [package.json](https://docs.npmjs.com/files/package.json) file. It will then look for the best module name match for the name given, find that module's package, use it to locate the most likely url for documentation and try to open it in a web browser.
 
 Because of the naming conventions of modules the *best module name match* is (in order): exact match, tail match, head match, body match.
 
