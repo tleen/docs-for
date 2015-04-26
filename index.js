@@ -25,7 +25,9 @@ module.exports = function(options, callback){
     if(_.isNull(found)) return callback(new Error('Unable to find "package.json"'));
 
     fs.readJson(found, function(err, pkg){
+
       if(err) return callback(err);
+
       var modules = _.chain({})
 	.merge(pkg.dependencies, pkg.devDependencies)
 	.keys()
@@ -66,7 +68,7 @@ module.exports = function(options, callback){
 	for(i = 0; i < length; i++){
 	  if(regex.test(modules[i])) return i;
 	}
-	console.log('returning undefined');
+
 	return undefined;
       })();
 

@@ -6,7 +6,9 @@ path = require('path');
 var lodashHP = 'https://lodash.com/';
 
 describe('find local modules', function(){
+
   describe('should find the lodash homepage', function(){
+
     it('with a string arg', function(done){
       docs4('lodash', function(err, url){
 	url.should.be.a.String.equal(lodashHP);
@@ -25,7 +27,9 @@ describe('find local modules', function(){
 
 // try overriding cwd
 describe('override cwd', function(){
+
   it('should find the lodash homepage', function(done){
+
     docs4({ name : 'lodash', from : __dirname}, function(err, url){
       url.should.be.a.String.equal(lodashHP);
       return done(err);      
@@ -34,12 +38,28 @@ describe('override cwd', function(){
 });
 
 // bad configuration
-describe('no name', function(){
-  it('should error', function(done){
-    docs4('', function(err, url){
-      err.should.be.an.Error.and.match(/required$/);
-      (url === undefined).should.be.true;
-      return done();
+describe('missing configuration args', function(){
+
+  describe('no args', function(){
+    it('should error', function(done){
+
+      docs4(undefined, function(err, url){
+	err.should.be.an.Error.and.match(/required$/);
+	(url === undefined).should.be.true;
+	return done();
+      });
+    });
+  });
+
+  describe('no name', function(){
+    
+    it('should error', function(done){
+      
+      docs4('', function(err, url){
+	err.should.be.an.Error.and.match(/required$/);
+	(url === undefined).should.be.true;
+	return done();
+      });
     });
   });
 });
@@ -47,7 +67,9 @@ describe('no name', function(){
 
 // error comes up from find lib
 describe('no package.json', function(){
+
   it('should error', function(done){
+
     var there = path.resolve(__dirname,'..','..');
     docs4({ name : 'whatever', from : there }, function(err, url){
       err.should.be.an.Error.and.match(/^Unable to find/);
@@ -56,3 +78,18 @@ describe('no package.json', function(){
     });
   });
 });
+
+
+
+describe('no matching module name', function(){
+
+  it('should error', function(done){
+
+    docs4({ name : 'whatever'}, function(err, url){
+      err.should.be.an.Error.and.match(/^No modules match/);
+      (url === undefined).should.be.true;
+      return done();      
+    });
+  });
+});
+
