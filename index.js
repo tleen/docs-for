@@ -13,8 +13,6 @@ module.exports = function(options, callback){
     'from' : process.cwd()
   });
 
-  console.log(args);
-
   var name = args.name;
 
   if(_.isEmpty(name)) return callback(new Error('Name of module is required'));
