@@ -33,7 +33,7 @@ module.exports = function(options, callback){
 	.sort()
 	.valueOf();
 
-      if(modules.length === 0) return callback(new Error('The package.json file has no dependant modules'));
+      if(modules.length === 0) return callback(new Error('The package.json file has no dependent modules'));
       
       // search through modules:
       // contains name 
