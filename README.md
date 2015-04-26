@@ -13,7 +13,7 @@ Because of the naming conventions of modules the *best module name match* is (in
 
 ## Command Line
 
-This module loads two executables *docs-for* and the same but shorter named *docs4*. Load the docs for a package in your current node project if you are anywhere in the project hierarchy.
+This module loads two executables *docs-for* and the alias *docs4*. These will try to load the docs for a package in your current node project if you are anywhere in the project hierarchy.
 
 ## example
 
