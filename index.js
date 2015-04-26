@@ -93,11 +93,5 @@ module.exports = function(options, callback){
     });
 
   });
-
-
-
-  // lookup homepage from modules own package file
-
-  // return homepage url
 };
 
