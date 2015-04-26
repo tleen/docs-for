@@ -31,7 +31,7 @@ docs4 comm
 Find the closest thing to a documentation url for a module in a local node project.
 
 ```javascript
-var docs4 = require('..');
+var docs4 = require('docs-for');
 
 docs4('grunt', function(err, url){
   console.log('The documentation url for grunt is:', url);
